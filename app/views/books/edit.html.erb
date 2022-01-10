@@ -1,0 +1,20 @@
+<!--投稿編集画面-->
+<%= form_with model: @book,url: book_update_path(@book.id),method: :patch,local: true do |f| %>
+<h1>Editing Book</h1>
+<!--本のタイトルの編集-->
+<div class=field>
+  <%= f.label :Title %>
+  <%= f.text_field :title%>
+</div>
+<!--本の感想の編集-->
+<div class=field>
+  <%= f.label :Body %>
+  <%= f.text_field :body%>
+</div>
+<!--投稿内容の更新-->
+<%= f.submit "Update Book" %>
+<% end %>
+
+<p><%= link_to "Show",book_path %> | <%= link_to "Back",books_path %></p>
+
+
