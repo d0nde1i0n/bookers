@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   root :to =>'homes#top' # アプリケーショントップ画面をルートパスへ
   get 'books'=>'books#index'
   post 'books'=>'books#create'
-  # lists/1や.../lists/3に該当する
+  # books/1や.../books/3に該当する
   get 'books/:id'=>'books#show', as: 'book'
-  get 'books/:id/edit'=>'books#edit',as: 'book-edit'
-  patch 'books/:id' => 'books#update',as: 'book-update'
-  delete 'books/:id' => 'books#destroy',as: 'book-destroy'
+  get 'books/:id/edit'=>'books#edit',as: 'edit-book'
+  patch 'books/:id' => 'books#update',as: 'update-book'
+  delete 'books/:id' => 'books#destroy',as: 'destroy-book'
 
 
 end
