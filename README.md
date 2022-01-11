@@ -1,4 +1,6 @@
 # README
+ アプリケーションを完成させようの基本課題
+ 「Bookers」アプリケーションです。
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
