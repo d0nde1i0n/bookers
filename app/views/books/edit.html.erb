@@ -1,6 +1,18 @@
 <!--投稿編集画面-->
-<%= form_with model: @book,url: book_update_path(@book.id),method: :patch,local: true do |f| %>
 <h1>Editing Book</h1>
+
+<!--バリデーションによる空白チェック-->
+<% if @book.errors.any? %>
+ <h3><%= @book.errors.count %> errors prohibited this book from being saved:</h3>
+     <ul>
+         <% @book.errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+         <% end %>
+    </ul>
+<% end %>
+
+
+<%= form_with model: @book,url: book_update_path(@book.id),method: :patch,local:true do |f| %>
 <!--本のタイトルの編集-->
 <div class=field>
   <%= f.label :Title %>
@@ -15,6 +27,7 @@
 <%= f.submit "Update Book" %>
 <% end %>
 
+<!---->
 <p><%= link_to "Show",book_path %> | <%= link_to "Back",books_path %></p>
 
 
